@@ -1,0 +1,12 @@
+c:\users\dotnet\documents\visual studio 2017\Projects\MultiplicationTable\bin\Debug\MultiplicationTable.exe.config
+c:\users\dotnet\documents\visual studio 2017\Projects\MultiplicationTable\bin\Debug\MultiplicationTable.exe
+c:\users\dotnet\documents\visual studio 2017\Projects\MultiplicationTable\bin\Debug\MultiplicationTable.pdb
+c:\users\dotnet\documents\visual studio 2017\Projects\MultiplicationTable\obj\Debug\MultiplicationTable.csprojResolveAssemblyReference.cache
+c:\users\dotnet\documents\visual studio 2017\Projects\MultiplicationTable\obj\Debug\MultiplicationTable.exe
+c:\users\dotnet\documents\visual studio 2017\Projects\MultiplicationTable\obj\Debug\MultiplicationTable.pdb
+C:\Users\dotnet\Documents\Programmering i c#\MultiplicationTable\bin\Debug\MultiplicationTable.exe.config
+C:\Users\dotnet\Documents\Programmering i c#\MultiplicationTable\bin\Debug\MultiplicationTable.exe
+C:\Users\dotnet\Documents\Programmering i c#\MultiplicationTable\bin\Debug\MultiplicationTable.pdb
+C:\Users\dotnet\Documents\Programmering i c#\MultiplicationTable\obj\Debug\MultiplicationTable.csprojResolveAssemblyReference.cache
+C:\Users\dotnet\Documents\Programmering i c#\MultiplicationTable\obj\Debug\MultiplicationTable.exe
+C:\Users\dotnet\Documents\Programmering i c#\MultiplicationTable\obj\Debug\MultiplicationTable.pdb
