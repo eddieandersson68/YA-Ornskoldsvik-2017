@@ -14,14 +14,111 @@ namespace Valutaväxlare
             
             Console.ForegroundColor = ConsoleColor.White;
             Console.Clear();
+            CurrencyMenu();
+
+
+
+            //switch (temp)
+            //{
+            //    case 1:
+            //        FromSekToUSD();
+            //        //Console.ReadKey();
+            //        //Console.Clear();
+            //        //Menu();
+            //        break;
+            //    case 2:
+            //        FromUSDToEuro();
+            //        break;
+            //    case 3:
+            //        FromSekToEuro();
+            //        break;
+            //    case 0:
+            //        Environment.Exit(0);
+            //        break;
+            //    default:
+            //        Console.ForegroundColor = ConsoleColor.Red;
+            //        Console.WriteLine("Not correct format, try again. ");
+            //        break;
+            //}
+        }
+        // My Method for SEK transactions
+        static void CurrencyMenu()
+        {
+
+            int temp = 0;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("What currency do you want to excange? \nPress 1,2 or 3? \n");
+
+
             Console.WriteLine("1: SEK");
             Console.WriteLine("2: USD");
             Console.WriteLine("3: Euro");
-            Console.WriteLine("0: Close program");
+            //Console.WriteLine("4: Go back up to main menu");
+            Console.WriteLine("0: close program");
+            int.TryParse(Console.ReadLine(), out temp);
+            if (temp == 1)
+            {
+                Console.WriteLine("You chosed SEK");
+                Console.WriteLine("In what currency do you want your money? \n");
+                Console.WriteLine("1: USD");
+                Console.WriteLine("2: Euro");
+                int.TryParse(Console.ReadLine(), out temp);
+                if (temp == 1)
+                {
+                    FromSekToUSD();
+                }
+                if (temp == 2)
+                {
+                    FromSekToEuro();
+                }
+            }
+            if (temp == 2)
+            {
+                Console.WriteLine("You chosed USD");
+                Console.WriteLine("In what currency do you want your money? \n");
+                Console.WriteLine("1: SEK");
+                Console.WriteLine("2: Euro");
+                int.TryParse(Console.ReadLine(), out temp);
+                if (temp == 1)
+                {
+                    USDToSek();
+                }
+                if (temp == 2)
+                {
+                    FromUSDToEuro();
+                }
+            }
+            if (temp == 3)
+            {
+                Console.WriteLine("You chosed Euro");
+                Console.WriteLine("In what currency do you want your money? \n");
+                Console.WriteLine("1: SEK");
+                Console.WriteLine("2: USD");
+                int.TryParse(Console.ReadLine(), out temp);
+                if (temp == 1)
+                {
+                    EuroToSek();
+                }
+                if(temp == 2)
+                {
+                    EuroToUSD();
+                }
+                
+
+            }
+            if (temp == 0)
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Not correct format, try again. ");
+            }
+
+
         }
-        // My Method for SEK transactions
-        static int FromSEKCurrencyMenu()
+        /*static int FromSEKCurrencyMenu()
         {
             int temp = 0; // Temp value to use for a menu
                           //double SEKamount = 0; // Value to hold the amount of the entered amount
@@ -54,7 +151,6 @@ namespace Valutaväxlare
                 case 0:
                     Environment.Exit(0);
                     break;
-
                 default:
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Not correct format, try again. ");
@@ -64,6 +160,7 @@ namespace Valutaväxlare
             //return;
             return 1;
         }
+
         // My Method for USD transactions
         static int FromUSDCurrencyMenu()
         {
@@ -95,9 +192,9 @@ namespace Valutaväxlare
                     break;
                 case 3:
                     return 0;
-                    //Console.Clear();
-                    //PrintStartMenu();
-                    //break;
+                //Console.Clear();
+                //PrintStartMenu();
+                //break;
                 case 0:
                     Environment.Exit(0);
                     break;
@@ -140,9 +237,9 @@ namespace Valutaväxlare
                     break;
                 case 3:
                     return 0;
-                    //Console.Clear();
-                    //PrintStartMenu();
-                    
+                //Console.Clear();
+                //PrintStartMenu();
+
                 case 0:
                     Environment.Exit(0);
                     break;
@@ -155,19 +252,20 @@ namespace Valutaväxlare
             //} while (temp != 0);
             return 1;
         }
+        */
         /// ////////////////////////////////////////////////////////////////////////////////////////////////
         /// Method for converting SEK to USD
         static void FromSekToUSD()
         {
-            double USDOut=0;
+            double USDOut = 0;
             Double SEK, USD;
             Console.WriteLine("Enter the amount of SEK you want to exchange: \n");
             SEK = Double.Parse(Console.ReadLine());
             USD = SEK / 8.08;
 
             Console.WriteLine("{0} SEK Equals to  {1} USD \n\n", SEK, Math.Round(USD, 2));
-            if(USD>100)
-                for (int i = 0; i < 100; i++)
+            if (USD > 100)
+                for (int i = 0; i > 100; i++)
                 {
 
                 }
@@ -182,7 +280,9 @@ namespace Valutaväxlare
                 int nrOf20Dollars = (int)(USD / 20);
                 double rest = USD - (nrOf20Dollars * 20);
 
-                Console.WriteLine("You get " + Math.Round(USDOut, 2) + " $20 Notes");
+
+                Console.WriteLine("You get " + Math.Round(USDOut, 2) + " $20 Notes \n");
+                Console.WriteLine("You get " + nrOf20Dollars + " $20 Dollar notes and " + Math.Round(rest, 2));
             }
             if (USDOut < 20)
             {
@@ -208,7 +308,7 @@ namespace Valutaväxlare
             Console.Clear();
             PrintStartMenu();
         }
-        static void SekToEuro()
+        static void FromSekToEuro()
         {
             Double SEK, EURO;
             Console.WriteLine("Enter the amount of SEK you want to exchange: \n");
@@ -234,7 +334,7 @@ namespace Valutaväxlare
             Console.Clear();
             PrintStartMenu();
         }
-        static void USDToEuro()
+        static void FromUSDToEuro()
         {
             Double USD, EURO;
             Console.WriteLine("Enter the amount of USD you want to exchange: \n");
@@ -273,49 +373,49 @@ namespace Valutaväxlare
             Console.Clear();
             PrintStartMenu();
         }
-        
+
         static void Main(string[] args)
         {
             Console.WriteLine("\t\t\tCurrency Converter\n\n");
             PrintStartMenu();
-            string text = Console.ReadLine();
-            int menuChoise = int.Parse(text);
-            int inputResponse = 1;
-            do
-            {
-                if(inputResponse == 0)
-                {
-                    Console.Clear();
-                    PrintStartMenu();
-                    text = Console.ReadLine();
-                    menuChoise = int.Parse(text);
-                }
-                switch (menuChoise)
-                {
-                    case 1:
-                       inputResponse = FromSEKCurrencyMenu();
-                        break;
-                    case 2:
-                        inputResponse = FromUSDCurrencyMenu();
-                        break;
-                    case 3:
-                        inputResponse =  FromEuroCurrencyMenu();
-                        break;
-                    case 0:
-                        return;
-                    //Console.WriteLine("Program closes");
+            //string text = Console.ReadLine();
+            //int menuChoise = int.Parse(text);
+            //int inputResponse = 1;
+            //do
+            //{
+            //    if (inputResponse == 0)
+            //    {
+            //        Console.Clear();
+            //        PrintStartMenu();
+            //        text = Console.ReadLine();
+            //        menuChoise = int.Parse(text);
+            //    }
+            //    switch (menuChoise)
+            //    {
+            //        case 1:
+            //            inputResponse = FromSEKCurrencyMenu();
+            //            break;
+            //        case 2:
+            //            inputResponse = FromUSDCurrencyMenu();
+            //            break;
+            //        case 3:
+            //            inputResponse = FromEuroCurrencyMenu();
+            //            break;
+            //        case 0:
+            //            return;
+            //        //Console.WriteLine("Program closes");
 
-                    default:
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Not correct format, try again. ");
-                        PrintStartMenu();
-                        break;
-                        
-                }
-            } while (menuChoise != 0);
+            //        default:
+            //            Console.ForegroundColor = ConsoleColor.Red;
+            //            Console.WriteLine("Not correct format, try again. ");
+            //            PrintStartMenu();
+            //            break;
+
+            //    }
+            //} while (menuChoise != 0);
             Console.ReadKey();
 
         }
-        
+
     }
 }

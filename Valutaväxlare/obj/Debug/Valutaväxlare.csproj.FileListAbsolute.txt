@@ -10,3 +10,9 @@ C:\Users\dotnet\Documents\Programmering i c# YA\Valutaväxlare\bin\Debug\Valutav
 C:\Users\dotnet\Documents\Programmering i c# YA\Valutaväxlare\obj\Debug\Valutaväxlare.csprojResolveAssemblyReference.cache
 C:\Users\dotnet\Documents\Programmering i c# YA\Valutaväxlare\obj\Debug\Valutaväxlare.exe
 C:\Users\dotnet\Documents\Programmering i c# YA\Valutaväxlare\obj\Debug\Valutaväxlare.pdb
+C:\Users\dotnet\Documents\Git\YA-Ornskoldsvik-2017\Valutaväxlare\bin\Debug\Valutaväxlare.exe.config
+C:\Users\dotnet\Documents\Git\YA-Ornskoldsvik-2017\Valutaväxlare\bin\Debug\Valutaväxlare.exe
+C:\Users\dotnet\Documents\Git\YA-Ornskoldsvik-2017\Valutaväxlare\bin\Debug\Valutaväxlare.pdb
+C:\Users\dotnet\Documents\Git\YA-Ornskoldsvik-2017\Valutaväxlare\obj\Debug\Valutaväxlare.csprojResolveAssemblyReference.cache
+C:\Users\dotnet\Documents\Git\YA-Ornskoldsvik-2017\Valutaväxlare\obj\Debug\Valutaväxlare.exe
+C:\Users\dotnet\Documents\Git\YA-Ornskoldsvik-2017\Valutaväxlare\obj\Debug\Valutaväxlare.pdb
