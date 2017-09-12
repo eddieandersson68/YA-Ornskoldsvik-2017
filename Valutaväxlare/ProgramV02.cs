@@ -102,108 +102,142 @@ namespace Valutaväxlare
         {
             double USDOut = 0;
             //double DollarNote100 = 100;
-            int [] DollarNotes = { 100, 50, 20, 10, 5, 2, 1 };
-            double[] Coins = { 1, 0.50, 0.25, 0.10, 0.05, 0.02, 0.01 };
+            
             Double SEK, USD;
             Console.WriteLine("Enter the amount of SEK you want to exchange: \n");
             SEK = Double.Parse(Console.ReadLine());
-            USD = SEK / 8.08;
-            {
+            USD = SEK / 8.08; // SEK in USD
+          
+
+
                 Console.WriteLine("{0} SEK Equals to  {1} USD \n\n", SEK, Math.Round(USD, 2));
+                Console.WriteLine("which gives you: \n");
+                int[] DollarNotes = { 100, 50, 20, 10, 5, 2, 1 }; // Array of value of dollar notes
+                //foreach (var s in DollarNotes)
+                //{
+                //    Console.WriteLine(s);
+                //}
+                double[] Coins = { 0.50, 0.25, 0.10, 0.05, 0.02, 0.01 }; // Array of cents
+                ////foreach (var s in Coins)
+                ////{
+                ////    Console.WriteLine(s);
+                ////}
+
+                double Amount = USD; // Var to keep track of USD out
+                int num;
+
+                for (int i = 0; i < DollarNotes.Length; i++) // For loop to itterate the dollar values array
+                {
+                    if (DollarNotes[i] < Amount)
+                    {
+                        num = (int)Amount / DollarNotes[i];
+                        Console.WriteLine(num + " st " + " " + DollarNotes[i]+" Dollar notes") ;
+                        Amount = Amount % DollarNotes[i];
+                    }
+                }
+                for (int i = 0; i < Coins.Length; i++) //For loop to itterate the cent values array
+                {
+                    if (Coins[i] <= Amount)
+                    {
+                        num = (int)(Amount / Coins[i]);
+                        Console.WriteLine(num + " st " + " " + Coins[i] + " Cents");
+                        Amount = Amount % Coins[i];
+                    }
+                }
                 //USDOut = USD / 50;
                 //Console.WriteLine("You get " + Math.Round(USDOut, 2) + " $50 Notes");
-            }
+            
             USDOut = USD;
-            if (USDOut > 100)
-            {
-                //USDOut = USDOut / 100;
-                int nrOf100Dollars = (int)(USD / 100);
-                Console.WriteLine("You get " + nrOf100Dollars + " $100 Notes");
-                double rest = USD - (nrOf100Dollars * 100);
-                //Console.WriteLine("You get " + nrOf20Dollars + " $20 Dollar notes and " + Math.Round(rest, 2));
-                if (rest > 50)
-                {
-                    int nrOf50Dollars = (int)(rest / 50);
-                    Console.WriteLine("You get " + nrOf50Dollars + " $50 Notes");
+            //if (USDOut > 100)
+            //{
+            //    //USDOut = USDOut / 100;
+            //    int nrOf100Dollars = (int)(USD / 100);
+            //    Console.WriteLine("You get " + nrOf100Dollars + " $100 Notes");
+            //    double rest = USD - (nrOf100Dollars * 100);
+            //    //Console.WriteLine("You get " + nrOf20Dollars + " $20 Dollar notes and " + Math.Round(rest, 2));
+            //    if (rest > 50)
+            //    {
+            //        int nrOf50Dollars = (int)(rest / 50);
+            //        Console.WriteLine("You get " + nrOf50Dollars + " $50 Notes");
 
-                    double rest2 = rest - nrOf50Dollars * 50;
-                    if(rest2 > 20)
-                    {
-                        int nrOf20Dollars = (int)(rest2 / 20);
-                        Console.WriteLine("You get " + nrOf20Dollars + " $20 Notes");
+            //        double rest2 = rest - nrOf50Dollars * 50;
+            //        if(rest2 > 20)
+            //        {
+            //            int nrOf20Dollars = (int)(rest2 / 20);
+            //            Console.WriteLine("You get " + nrOf20Dollars + " $20 Notes");
 
-                        double rest3 = rest2 - nrOf20Dollars * 20;
-                        if (rest3 >1)
-                        {
-                            int nrOf10Dollars = (int)(rest3 / 10);
-                            Console.WriteLine("You get " + nrOf10Dollars + " $10 Notes");
-                            double rest4 = rest3 - nrOf10Dollars * 10;
-                            if(rest4 >1)
-                            {
-                                int nrOf5Dollars = (int)(rest4 / 5);
-                                Console.WriteLine("You get " + nrOf5Dollars + " $5 Notes");
-                                double rest5 = rest4 - nrOf5Dollars * 5;
-                                if(rest5 > 1)
-                                {
-                                    int nrOf2Dollars = (int)(rest5 / 2);
-                                    Console.WriteLine("You get " + nrOf2Dollars + " $2 Notes");
-                                    double rest6 = rest5 - nrOf2Dollars * 2;
-                                    if (rest6 > 1)
-                                    {
-                                        int nrOf1Dollars = (int)(rest6 / 1);
-                                        Console.WriteLine("You get " + nrOf1Dollars + " $1 Notes");
-                                        double rest7 = rest6 - nrOf1Dollars * 1;
-                                            if (rest7 >= 0.50 || rest7 > 0.25)
-                                        {
-                                            double nrOf25Cents = (double) (rest7 / 0.25);
-                                            Console.WriteLine("You get " + Math.Round(nrOf25Cents,0) + " 25 Cents");
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
+            //            double rest3 = rest2 - nrOf20Dollars * 20;
+            //            if (rest3 >1)
+            //            {
+            //                int nrOf10Dollars = (int)(rest3 / 10);
+            //                Console.WriteLine("You get " + nrOf10Dollars + " $10 Notes");
+            //                double rest4 = rest3 - nrOf10Dollars * 10;
+            //                if(rest4 >1)
+            //                {
+            //                    int nrOf5Dollars = (int)(rest4 / 5);
+            //                    Console.WriteLine("You get " + nrOf5Dollars + " $5 Notes");
+            //                    double rest5 = rest4 - nrOf5Dollars * 5;
+            //                    if(rest5 > 1)
+            //                    {
+            //                        int nrOf2Dollars = (int)(rest5 / 2);
+            //                        Console.WriteLine("You get " + nrOf2Dollars + " $2 Notes");
+            //                        double rest6 = rest5 - nrOf2Dollars * 2;
+            //                        if (rest6 > 1)
+            //                        {
+            //                            int nrOf1Dollars = (int)(rest6 / 1);
+            //                            Console.WriteLine("You get " + nrOf1Dollars + " $1 Notes");
+            //                            double rest7 = rest6 - nrOf1Dollars * 1;
+            //                                if (rest7 >= 0.50 || rest7 > 0.25)
+            //                            {
+            //                                double nrOf25Cents = (double) (rest7 / 0.25);
+            //                                Console.WriteLine("You get " + Math.Round(nrOf25Cents,0) + " 25 Cents");
+            //                            }
+            //                        }
+            //                    }
+            //                }
+            //            }
+            //        }
                     
-                }
-            }
-            //if (USDOut >50 )
-            //{
-            //    //USDOut = USD / 50;
+            //    }
+            //}
+            ////if (USDOut >50 )
+            ////{
+            ////    //USDOut = USD / 50;
                 
-            //    int nrOf50Dollars = (int)(USD / 50);
-            //    Console.WriteLine("You get " + nrOf50Dollars + " $50 Notes");
-            //    double rest = USD - (nrOf50Dollars * 50);
-            //}
-            //if (USDOut < 20)
-            //{
-            //    //USDOut = USD / 20;
-            //    int nrOf20Dollars = (int)(USD / 20);
-            //    Console.WriteLine("You get " + Math.Round(USDOut, 2) + " $20 Notes");
-            //}
-            //if (USDOut < 10)
-            //{
-            //    //USDOut = USD / 10;
-            //    int nrOf10Dollars = (int)(USD / 10);
-            //    Console.WriteLine("You get " + Math.Round(USDOut, 2) + " $10 Notes");
-            //}
-            //if (USDOut < 5)
-            //{
-            //    //USDOut = USD / 5;
-            //    int nrOf5Dollars = (int)(USD / 5);
-            //    Console.WriteLine("You get " + Math.Round(USDOut, 2) + " $5 Notes");
-            //}
-            //if (USDOut < 2)
-            //{
-            //    //USDOut = USD / 2;
-            //    int nrOf2Dollars = (int)(USD / 2);
-            //    Console.WriteLine("You get " + Math.Round(USDOut, 2) + " $2 Notes");
-            //}
-            //if (USDOut <= 1)
-            //{
-            //    //USDOut = USD / 1;
-            //    int nrOf1Dollars = (int)(USD / 1);
-            //    Console.WriteLine("You get " + Math.Round(USDOut, 2) + " $1 Notes");
-            //}
+            ////    int nrOf50Dollars = (int)(USD / 50);
+            ////    Console.WriteLine("You get " + nrOf50Dollars + " $50 Notes");
+            ////    double rest = USD - (nrOf50Dollars * 50);
+            ////}
+            ////if (USDOut < 20)
+            ////{
+            ////    //USDOut = USD / 20;
+            ////    int nrOf20Dollars = (int)(USD / 20);
+            ////    Console.WriteLine("You get " + Math.Round(USDOut, 2) + " $20 Notes");
+            ////}
+            ////if (USDOut < 10)
+            ////{
+            ////    //USDOut = USD / 10;
+            ////    int nrOf10Dollars = (int)(USD / 10);
+            ////    Console.WriteLine("You get " + Math.Round(USDOut, 2) + " $10 Notes");
+            ////}
+            ////if (USDOut < 5)
+            ////{
+            ////    //USDOut = USD / 5;
+            ////    int nrOf5Dollars = (int)(USD / 5);
+            ////    Console.WriteLine("You get " + Math.Round(USDOut, 2) + " $5 Notes");
+            ////}
+            ////if (USDOut < 2)
+            ////{
+            ////    //USDOut = USD / 2;
+            ////    int nrOf2Dollars = (int)(USD / 2);
+            ////    Console.WriteLine("You get " + Math.Round(USDOut, 2) + " $2 Notes");
+            ////}
+            ////if (USDOut <= 1)
+            ////{
+            ////    //USDOut = USD / 1;
+            ////    int nrOf1Dollars = (int)(USD / 1);
+            ////    Console.WriteLine("You get " + Math.Round(USDOut, 2) + " $1 Notes");
+            ////}
             Console.ReadKey();
             Console.Clear();
             CurrencyMenu();
@@ -278,6 +312,7 @@ namespace Valutaväxlare
         }
         static void WrongSelection()
         {
+            
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Not correct format, try again. \n \n ");
             Console.ReadKey();

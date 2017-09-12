@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Valutaväxlare", "Valutaväxlare.csproj", "{09B23E35-A864-413D-AA02-FB4A983E1C8B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise01", "..\Exercise01\Exercise01.csproj", "{698B3510-3CFE-4D66-852A-371367FCDF98}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{09B23E35-A864-413D-AA02-FB4A983E1C8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09B23E35-A864-413D-AA02-FB4A983E1C8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09B23E35-A864-413D-AA02-FB4A983E1C8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{698B3510-3CFE-4D66-852A-371367FCDF98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{698B3510-3CFE-4D66-852A-371367FCDF98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{698B3510-3CFE-4D66-852A-371367FCDF98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{698B3510-3CFE-4D66-852A-371367FCDF98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
