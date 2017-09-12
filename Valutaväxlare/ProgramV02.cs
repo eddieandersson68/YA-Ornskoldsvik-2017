@@ -103,7 +103,7 @@ namespace Valutaväxlare
             double USDOut = 0;
             //double DollarNote100 = 100;
             int [] DollarNotes = { 100, 50, 20, 10, 5, 2, 1 };
-            double[] DollarCents = { 1, 0.50, 0.25, 0.10, 0.05, 0.02, 0.01 };
+            double[] Coins = { 1, 0.50, 0.25, 0.10, 0.05, 0.02, 0.01 };
             Double SEK, USD;
             Console.WriteLine("Enter the amount of SEK you want to exchange: \n");
             SEK = Double.Parse(Console.ReadLine());
@@ -156,7 +156,7 @@ namespace Valutaväxlare
                                             if (rest7 >= 0.50 || rest7 > 0.25)
                                         {
                                             double nrOf25Cents = (double) (rest7 / 0.25);
-                                            Console.WriteLine("You get " + Math.Round(nrOf25Cents,2) + " 25 Cents");
+                                            Console.WriteLine("You get " + Math.Round(nrOf25Cents,0) + " 25 Cents");
                                         }
                                     }
                                 }
