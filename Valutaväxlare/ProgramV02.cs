@@ -98,11 +98,8 @@ namespace Valutaväxlare
         /// Method for converting SEK to USD
         /// </summary>
         static void FromSekToUSD()
-
         {
-            double USDOut = 0;
-            //double DollarNote100 = 100;
-            
+            //double USDOut = 0;
             Double SEK, USD;
             Console.WriteLine("Enter the amount of SEK you want to exchange: \n");
             SEK = Double.Parse(Console.ReadLine());
@@ -147,7 +144,7 @@ namespace Valutaväxlare
                 //USDOut = USD / 50;
                 //Console.WriteLine("You get " + Math.Round(USDOut, 2) + " $50 Notes");
             
-            USDOut = USD;
+            //USDOut = USD;
             //if (USDOut > 100)
             //{
             //    //USDOut = USDOut / 100;
