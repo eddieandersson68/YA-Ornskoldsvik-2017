@@ -3,3 +3,8 @@ C:\Users\Eddie\Source\Repos\YA-Ornskoldsvik-2017\Animal\bin\Debug\Animal.pdb
 C:\Users\Eddie\Source\Repos\YA-Ornskoldsvik-2017\Animal\obj\Debug\Animal.dll
 C:\Users\Eddie\Source\Repos\YA-Ornskoldsvik-2017\Animal\obj\Debug\Animal.pdb
 C:\Users\Eddie\Source\Repos\YA-Ornskoldsvik-2017\Animal\obj\Debug\Animal.csprojResolveAssemblyReference.cache
+C:\Users\dotnet\Documents\Git\YA-Ornskoldsvik-2017\Animal\bin\Debug\Animal.dll
+C:\Users\dotnet\Documents\Git\YA-Ornskoldsvik-2017\Animal\bin\Debug\Animal.pdb
+C:\Users\dotnet\Documents\Git\YA-Ornskoldsvik-2017\Animal\obj\Debug\Animal.csprojResolveAssemblyReference.cache
+C:\Users\dotnet\Documents\Git\YA-Ornskoldsvik-2017\Animal\obj\Debug\Animal.dll
+C:\Users\dotnet\Documents\Git\YA-Ornskoldsvik-2017\Animal\obj\Debug\Animal.pdb

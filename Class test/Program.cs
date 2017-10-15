@@ -8,15 +8,15 @@ namespace Class_test
 {
     class Animals<T>
     {
-        public List<T> _animal = new List<T>();
+        public List<T> _list = new List<T>();
         public void AddToList(T x)
         {
-            _animal.Add(x);
+            _list.Add(x);
         }
 
         public void PrintAnimals()
         {
-            foreach (T i in _animal)
+            foreach (T i in _list)
             {
                 Console.WriteLine(i);
             }
@@ -30,28 +30,18 @@ namespace Class_test
         
         static void Main(string[] args)
         {
+           
+            Animals<Dog> myDogs = new Animals<Dog>();
+            myDogs.AddToList(new Dog(){ Age = 7, Name = "Lassie" });
+            myDogs.AddToList(new Dog() { Age = 12, Name = "Bob" });
+
+
             
-            List<Dog> myDogs = new List<Dog>();
-            myDogs.Add(new Dog(){ Age = 7, Name = "Lassie" });
-
-
-            foreach (Dog dogs in myDogs)
-            {
-                Console.WriteLine(dogs);
-            }
-
-            //myDogs.PrintAnimals();
-
+            myDogs.PrintAnimals();
             AgeClass a1 = new AgeClass();
-            //Cat myCat = new Cat();
-            //Dog d1 = new Dog();
-
-            //myCat.Description();
-            
+           
 
             a1.Age(7);
-
-            //d1.DoggyStyle();
             Console.ReadLine();
         }
     }

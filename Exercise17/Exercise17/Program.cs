@@ -17,7 +17,7 @@ namespace Exercise17
                 for (int i = Data.Count; i < 5 ; i++)
                 {
                     Person person = new Person();
-                    Console.WriteLine("Please typ five names? ");
+                    Console.WriteLine("Please type five names? ");
                     person.Name = Convert.ToString(Console.ReadLine());
                     Console.WriteLine("Now an age? ");
                     person.Age = Convert.ToInt32(Console.ReadLine());

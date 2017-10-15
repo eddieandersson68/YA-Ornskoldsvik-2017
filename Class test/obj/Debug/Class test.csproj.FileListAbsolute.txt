@@ -6,3 +6,11 @@ C:\Users\Eddie\Source\Repos\YA-Ornskoldsvik-2017\Class test\bin\Debug\Animal.dll
 C:\Users\Eddie\Source\Repos\YA-Ornskoldsvik-2017\Class test\bin\Debug\Animal.pdb
 C:\Users\Eddie\Source\Repos\YA-Ornskoldsvik-2017\Class test\obj\Debug\Class test.exe
 C:\Users\Eddie\Source\Repos\YA-Ornskoldsvik-2017\Class test\obj\Debug\Class test.pdb
+C:\Users\dotnet\Documents\Git\YA-Ornskoldsvik-2017\Class test\bin\Debug\Class test.exe.config
+C:\Users\dotnet\Documents\Git\YA-Ornskoldsvik-2017\Class test\bin\Debug\Class test.exe
+C:\Users\dotnet\Documents\Git\YA-Ornskoldsvik-2017\Class test\bin\Debug\Class test.pdb
+C:\Users\dotnet\Documents\Git\YA-Ornskoldsvik-2017\Class test\bin\Debug\Animal.dll
+C:\Users\dotnet\Documents\Git\YA-Ornskoldsvik-2017\Class test\bin\Debug\Animal.pdb
+C:\Users\dotnet\Documents\Git\YA-Ornskoldsvik-2017\Class test\obj\Debug\Class test.csprojResolveAssemblyReference.cache
+C:\Users\dotnet\Documents\Git\YA-Ornskoldsvik-2017\Class test\obj\Debug\Class test.exe
+C:\Users\dotnet\Documents\Git\YA-Ornskoldsvik-2017\Class test\obj\Debug\Class test.pdb

@@ -24,15 +24,15 @@ namespace Test_StringBuilder
 
             Console.WriteLine(sb2.ToString());
             sb2.Replace("text", "Characters");
-            Console.WriteLine(sb2.ToString());
+            //Console.WriteLine(sb2.ToString());
 
 
             int [] minArray = {0,1,2,3,4,5 };
             Console.WriteLine(minArray.Length + " elements");
             Console.WriteLine(minArray.Count() + " elements");
-            for (int i = 0; i < length; i++)
+            for (int i = 0; i < minArray.Length; i++)
             {
-
+                Console.WriteLine(i + "");
             }
 
             //sb2.Clear();
