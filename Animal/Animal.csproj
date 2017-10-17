@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AgeClass.cs" />
+    <Compile Include="AnimalTypes.cs" />
     <Compile Include="Cat.cs" />
     <Compile Include="Dog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

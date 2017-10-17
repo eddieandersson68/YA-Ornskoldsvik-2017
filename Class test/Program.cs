@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Animal;
+
+
 namespace Class_test
 {
     class Animals<T>
@@ -23,25 +25,34 @@ namespace Class_test
         }
 
     }
-    
 
     class Program
     {
         
         static void Main(string[] args)
         {
-           
-            Animals<Dog> myDogs = new Animals<Dog>();
-            myDogs.AddToList(new Dog(){ Age = 7, Name = "Lassie" });
-            myDogs.AddToList(new Dog() { Age = 12, Name = "Bob" });
 
+            Animals<AnimalTypes> myAnimals = new Animals<AnimalTypes>();
+
+            myAnimals.AddToList(new Dog() { Speices = "Dog", Breed = "German Shepard", Hight = 65, Length = 97, Age = 6, Name = "Rocky", Tail = 66 });
+            myAnimals.AddToList(new Dog() { Speices = "Dog", Breed = "Golden Retriver", Hight = 75, Length = 103, Age = 8, Name = "Boomer",Tail = 70 });
+
+
+            myAnimals.AddToList(new Cat() { Speices = "Cat", Breed = "Burma", Hight = 24, Length = 53, Age = 3, Name = "whitey" });
+            myAnimals.AddToList(new Cat() { Speices = "Cat", Breed = "Norveigan", Hight = 33, Length = 57, Age = 5, Name = "Doris" });
+
+            myAnimals.PrintAnimals();
+
+            Console.Write("Wow Rocky ");
+            myAnimals._list.Where(x => x.Name == "Rocky").FirstOrDefault().PrintHumanAge();
+            Console.Write("Doris ");
+            myAnimals._list.Where(x => x.Name == "Doris").FirstOrDefault().PrintHumanAge();
+
+
+            myAnimals._list.Find(x => x.Name == "r");
 
             
-            myDogs.PrintAnimals();
-            AgeClass a1 = new AgeClass();
            
-
-            a1.Age(7);
             Console.ReadLine();
         }
     }

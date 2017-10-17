@@ -6,33 +6,29 @@ using System.Threading.Tasks;
 
 namespace Animal
 {
-    public class Dog
+    public class Dog : AnimalTypes
     {
-        public  int Age { get; set; }
-        public string Name { get; set; }
+        public int Tail { get; set; }
+        //public string Name { get; set; }
+        public int GetAge()
+        {
+            return Age;
+          
+        }
 
+        
 
-
-
-
-        //public Dog(string Name, int Age)
-        //{
-        //    Name = string;
-        //    Age = Value;
-        //}
-        //public void DoggyStyle()
-        //{
-
-        //    AgeClass a2 = new AgeClass();
-
-        //    Console.WriteLine("I'm a dog and I'm 7 years old");
-        //    a2.Age(7);
-        //}
 
         public override string ToString()
         {
-            return string.Format(" I'm a dog, and my name is {0} and I'm {1} years old", Name, Age);
+            return string.Format("I'm a {5}, and my name is {0} and I'm {1} years old, I'm a {2}.\nThese are my measurements I'm {3} cm's tall and {4} cm's long\nI got a {6} cm long tail\n", Name, Age, Breed, Hight, Length, Speices, Tail);
         }
+        //public override Dog PrintHumanAge()
+        //{
+        //    Age *= 7;
+        //    //Console.WriteLine("That's {0} human years\n", Age);
+        //    return 
 
+        //}
     }
 }

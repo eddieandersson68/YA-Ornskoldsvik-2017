@@ -4,15 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Animal
 {
-    public class Cat
+    
+    public class Cat :AnimalTypes
     {
         
-        public void Description()
-        {
-            
-            Console.WriteLine("I'm a cat and I'm 4 years old");
-        }
     }
 }
