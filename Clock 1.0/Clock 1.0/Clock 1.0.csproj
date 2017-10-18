@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{063E13D8-C97A-4984-81C1-BC7014C233DF}</ProjectGuid>
+    <ProjectGuid>{5E6547BA-3E8A-46A0-A1D7-D41489179A20}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Clock_1._0</RootNamespace>
     <AssemblyName>Clock 1.0</AssemblyName>
