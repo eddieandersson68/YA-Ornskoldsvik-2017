@@ -64,6 +64,9 @@ namespace WindowsFormsApp1
             
             comboBox1.Items.Add(newBook.GetBookInfo());
             richTextBox1.AppendText(newBook.GetBookInfo());
+            
         }
+
+        
     }
 }
