@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Clock_1._0.Properties
+namespace EventTest.Properties
 {
 
 

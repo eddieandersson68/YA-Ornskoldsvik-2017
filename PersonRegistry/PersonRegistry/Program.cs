@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Clock_1._0
+namespace PersonRegistry
 {
     static class Program
     {
