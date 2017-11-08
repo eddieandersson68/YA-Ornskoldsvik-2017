@@ -6,13 +6,11 @@ namespace PersonRegistry
     {
         protected string _firstName { get; set; }
         protected string _lastName { get; set; }
-        protected string _genderPrefix { get; set; }
 
-        public Person(string GenderPrefix, string Firstname, string Lastname)
+        public Person(string Firstname, string Lastname)
         {
             _firstName = Firstname;
             _lastName = Lastname;
-            _genderPrefix = GenderPrefix;
         }
 
         public virtual string GetFirstName()
@@ -24,17 +22,6 @@ namespace PersonRegistry
         {
             return _lastName;
         }
-
-        public virtual string GetPrefix()
-        {
-            return _genderPrefix;
-        }
-
-        public override string ToString()
-        {
-            return $"{_genderPrefix} {_firstName.ToLower()} {_lastName.ToLower()}";
-        }
-
         public static Person operator +(Person female, Person male)
         {
             return new Child("Child", female._firstName, male._lastName);

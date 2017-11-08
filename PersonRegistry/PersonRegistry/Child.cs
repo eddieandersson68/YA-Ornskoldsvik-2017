@@ -2,8 +2,16 @@
 {
     class Child : Person
     {
-        public Child (string Genderprefix, string Firstname, string Lastname) : base (Genderprefix , Firstname, Lastname)
+        protected string _genderPrefix { get; set; }
+
+        public string GetPrefix()
         {
+            return _genderPrefix;
+        }
+
+        public Child (string Genderprefix, string Firstname, string Lastname) : base(Firstname, Lastname)
+        {
+            _genderPrefix = Genderprefix;
         }
 
         public override string GetPerson()

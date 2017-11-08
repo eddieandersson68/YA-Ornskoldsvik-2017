@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -9,7 +8,6 @@ namespace PersonRegistry
 {
     public partial class Form1 : Form
     {
-        TextInfo myTI = new CultureInfo("en-US", false).TextInfo;
         HelperMethods h = new HelperMethods();
 
         private static List<Person> ListOfPersons = new List<Person>();
@@ -25,18 +23,16 @@ namespace PersonRegistry
 
         private void tbxFirstname_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            e.Handled = !(char.IsLetter(e.KeyChar)
+            || e.KeyChar == (char)Keys.Space
+            || e.KeyChar == (char)Keys.Back);
         }
 
         private void tbxLastname_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            e.Handled = !(char.IsLetter(e.KeyChar)
+            || e.KeyChar == (char)Keys.Space
+            || e.KeyChar == (char)Keys.Back);        
         }
 
         private void tbxSearch_KeyPress(object sender, KeyPressEventArgs e)
@@ -62,7 +58,7 @@ namespace PersonRegistry
 
             if (rdbMale.Checked)
             {
-                p = new Male("Mr", tbxFirstname.Text.ToLower(), tbxLastname.Text.ToLower());
+                p = new Male("Mr", tbxFirstname.Text.ToString().ToLower(), tbxLastname.Text.ToString().ToLower());
             }
 
             else
@@ -73,7 +69,7 @@ namespace PersonRegistry
             ListOfPersons.Add(p);
 
             if (tbxFirstname.Text != "" || tbxLastname.Text != "")
-                lsBxPersons.Items.Add(p);
+                lsBxPersons.Items.Add(p.GetPerson());
 
             tbxFirstname.Clear();
             tbxLastname.Clear();
@@ -202,15 +198,13 @@ namespace PersonRegistry
         public void PersonToSearchFor(string searchstring)
         {
             var quaryperson = from o in ListOfPersons
-                              where o.GetLastName().StartsWith(searchstring)
-                              || o.GetFirstName().StartsWith(searchstring)
-                              //|| o.GetPrefix().StartsWith(searchstring)
+                              where o.GetPerson().Contains(searchstring)
                               orderby o.ToString()
                               select o;
 
             foreach (var item in quaryperson)
             {
-                lsBxPersons.Items.Add(item.ToString());
+                lsBxPersons.Items.Add(item.GetPerson().ToString());
             }
         }
     }
