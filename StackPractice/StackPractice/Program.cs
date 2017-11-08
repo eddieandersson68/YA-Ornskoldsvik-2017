@@ -11,7 +11,7 @@ namespace StackPractice
         // Pratice 16 Read 5 names from user an
         static void Main(string[] args)
         {
-            // Read 5 names to a stack
+            // Read 5 names to a stack LIFO = Last in first out
             Console.WriteLine("Type 5 names\n ");
             Stack<string> names = new Stack<string>();
             for (int i = 0; i < 5; i++)
