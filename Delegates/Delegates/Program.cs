@@ -33,7 +33,7 @@ namespace Delegates
             answer = mathDelegate(10, 5);
             Debug.WriteLine("Subtract: " + answer);
 
-            
+            Debug.WriteLine(answer);
 
             Console.ReadLine();
         }
@@ -47,8 +47,6 @@ namespace Delegates
         {
             return num1 - num2;
         }
-
-
     }
 }
 
