@@ -5,10 +5,10 @@ namespace EntityFramework01
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class StaffContex : DbContext
+    public partial class StaffContext : DbContext
     {
-        public StaffContex()
-            : base("name=StaffContex")
+        public StaffContext()
+            : base("name=StaffContext")
         {
         }
 

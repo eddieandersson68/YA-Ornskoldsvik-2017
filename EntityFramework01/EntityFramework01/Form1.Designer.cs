@@ -36,6 +36,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdateDBStaff = new System.Windows.Forms.Button();
+            this.txBxFirstName = new System.Windows.Forms.TextBox();
+            this.txBxLastName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lstBxStaff
@@ -58,7 +61,7 @@
             // cmBxFirstName
             // 
             this.cmBxFirstName.FormattingEnabled = true;
-            this.cmBxFirstName.Location = new System.Drawing.Point(15, 292);
+            this.cmBxFirstName.Location = new System.Drawing.Point(374, 155);
             this.cmBxFirstName.Name = "cmBxFirstName";
             this.cmBxFirstName.Size = new System.Drawing.Size(121, 21);
             this.cmBxFirstName.TabIndex = 2;
@@ -66,7 +69,7 @@
             // cmBxLastName
             // 
             this.cmBxLastName.FormattingEnabled = true;
-            this.cmBxLastName.Location = new System.Drawing.Point(246, 292);
+            this.cmBxLastName.Location = new System.Drawing.Point(378, 80);
             this.cmBxLastName.Name = "cmBxLastName";
             this.cmBxLastName.Size = new System.Drawing.Size(121, 21);
             this.cmBxLastName.TabIndex = 3;
@@ -109,11 +112,38 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // btnUpdateDBStaff
+            // 
+            this.btnUpdateDBStaff.Location = new System.Drawing.Point(203, 336);
+            this.btnUpdateDBStaff.Name = "btnUpdateDBStaff";
+            this.btnUpdateDBStaff.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdateDBStaff.TabIndex = 8;
+            this.btnUpdateDBStaff.Text = "Update";
+            this.btnUpdateDBStaff.UseVisualStyleBackColor = true;
+            this.btnUpdateDBStaff.Click += new System.EventHandler(this.btnUpdateDBStaff_Click);
+            // 
+            // txBxFirstName
+            // 
+            this.txBxFirstName.Location = new System.Drawing.Point(16, 292);
+            this.txBxFirstName.Name = "txBxFirstName";
+            this.txBxFirstName.Size = new System.Drawing.Size(100, 20);
+            this.txBxFirstName.TabIndex = 9;
+            // 
+            // txBxLastName
+            // 
+            this.txBxLastName.Location = new System.Drawing.Point(246, 292);
+            this.txBxLastName.Name = "txBxLastName";
+            this.txBxLastName.Size = new System.Drawing.Size(100, 20);
+            this.txBxLastName.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(511, 490);
+            this.Controls.Add(this.txBxLastName);
+            this.Controls.Add(this.txBxFirstName);
+            this.Controls.Add(this.btnUpdateDBStaff);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.label3);
@@ -139,6 +169,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnUpdateDBStaff;
+        private System.Windows.Forms.TextBox txBxFirstName;
+        private System.Windows.Forms.TextBox txBxLastName;
     }
 }
 

@@ -21,48 +21,85 @@ namespace EntityFramework01
 
         public void PopulateListBxStaff()
         {
-            using (var DBContext = new StaffContex())
+            using (var DBContext = new StaffContext())
             {
                 var listOfStaff = DBContext.Employee;
 
                 foreach (var itmen in listOfStaff)
                 {
-                    lstBxStaff.Items.Add(itmen.FirstName.PadRight(15) + itmen.LastName);
-                    cmBxFirstName.Items.Add(itmen.FirstName);
-                    cmBxLastName.Items.Add(itmen.LastName);
+                    lstBxStaff.Items.Add(itmen.FirstName + itmen.LastName);
+                    //cmBxFirstName.Items.Add(itmen.FirstName);
+                    //cmBxLastName.Items.Add(itmen.LastName);
                 }
             }
         }
 
-        public void UpdateDBStaff ()
+        public void UpdateDBStaff()
         {
             Employee updateEmployee;
-            using (var DBStaffContext = new StaffContex())
+            using (var DBStaffContext = new StaffContext())
             {
-
-                updateEmployee = DBStaffContext.Employee.Where(x => x.Person_ID == lstBxStaff.SelectedIndex +1). FirstOrDefault<Employee>();
+                updateEmployee = DBStaffContext.Employee.Where(x => x.Person_ID == lstBxStaff.SelectedIndex).First<Employee>();
 
                 if (updateEmployee != null)
                 {
-                    updateEmployee.Person_ID = (short)lstBxStaff.SelectedIndex;
+                    updateEmployee.FirstName = txBxFirstName.Text;
+                    updateEmployee.LastName = txBxLastName.Text;
                 }
 
-               
+                // Save modifuíed entity as new context 
+                using (var newContext = new StaffContext())
+                {
+                    // Mark entity as modified
+                    newContext.Entry(updateEmployee).State = EntityState.Modified;
+                    //newContext.Entry(updateEmployee).State = System.Data.Entity.EntityState.Deleted;
 
-                // Mark entity as modified
-                DBStaffContext.Entry(updateEmployee).State = EntityState.Modified;
+                    // Call savechanges
+                    newContext.SaveChanges();
+                }
+
+                //using (var dbContext = new WorkContext())
+                //{
+
+                //    var updateStudent = dbContext.Students.Where(x => x.Id == 3).First();
 
 
-                DBStaffContext.SaveChanges();
+                //    updateStudent.FirstName = "NewJohn";
+
+                //    // Mark entity as modified
+                //    dbContext.Entry(updateStudent).State = EntityState.Modified;
+
+
+                //    dbContext.SaveChanges();
+                //}
+
+
+
+
+
+
+                // DBStaffContext.SaveChanges();
             }
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            UpdateDBStaff();
+            using (var dbContext = new StaffContext())
+            {
+                Employee newEmployee = new Employee();
+                newEmployee.FirstName = txBxFirstName.Text;
+                newEmployee.LastName = txBxLastName.Text;
+
+                dbContext.Employee.Add(newEmployee);
+                dbContext.SaveChanges();
+            }
+            lstBxStaff.Items.Clear();
+            PopulateListBxStaff();
+
+            //UpdateDBStaff();
             //Employee employee;
             //using (var DBStaffContext = new StaffContex())
-            {
+            //{
             //    employee = DBStaffContext.Employee.Where(s => s.FirstName == cmBxFirstName.SelectedItem.ToString()).FirstOrDefault<Employee>();
             //    if (employee != null)
             //    {
@@ -76,38 +113,46 @@ namespace EntityFramework01
             //        newContext.SaveChanges();
             //    }
 
-                //Employee newEmployee = new Employee();
-                ////newEmployee.FirstName = "Oswald";
-                ////newEmployee.LastName = "Cobblepot";
+            //Employee newEmployee = new Employee();
+            ////newEmployee.FirstName = "Oswald";
+            ////newEmployee.LastName = "Cobblepot";
 
-                //newEmployee.FirstName = cmBxFirstName.Text;
-                //newEmployee.LastName = cmBxLastName.Text;
+            //newEmployee.FirstName = cmBxFirstName.Text;
+            //newEmployee.LastName = cmBxLastName.Text;
 
-                //DBStaffContext.Employee.Add(newEmployee);
-                //DBStaffContext.SaveChanges();
-            }
-            
-
+            //DBStaffContext.Employee.Add(newEmployee);
+            //DBStaffContext.SaveChanges();
+            //}
 
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             Employee employeeToDelete;
-            using (var DBStaffContex = new StaffContex())
+            using (var DBStaffRemoveContex = new StaffContext())
             {
-                employeeToDelete = DBStaffContex.Employee.Where(s => s.FirstName == cmBxFirstName.SelectedItem.ToString()).FirstOrDefault<Employee>();
+
+                employeeToDelete = DBStaffRemoveContex.Employee.Where(s => s.Person_ID == lstBxStaff.SelectedIndex + 1).FirstOrDefault<Employee>();
+                DBStaffRemoveContex.Employee.Remove(employeeToDelete);
+                DBStaffRemoveContex.SaveChanges();
+
+
             }
 
-           
+
 
         }
 
         private class DBStaffContex
         {
         }
+
+        private void btnUpdateDBStaff_Click(object sender, EventArgs e)
+        {
+            UpdateDBStaff();
+        }
     }
 
-    
+
 }
 
