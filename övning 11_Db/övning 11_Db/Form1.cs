@@ -17,36 +17,38 @@ namespace övning_11_Db
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AddPeople();
+           AddPeople();
 
             using (var context = new peopleDb())
             {
-                    //var p = new Person();
-                    //p.Firstname = "Kalle"; p.Age = 5;
-                    //p.Firstname = "Saga"; p.Age = 53;
-                    //p.Firstname = "Sven"; p.Age = 45;
-                    //p.Firstname = "Karin"; p.Age = 23;
-                    //p.Firstname = "Molly"; p.Age = 12;
-
                     foreach (var p in peopleList)
                     {
                         context.persons.Add(p);
                         context.SaveChanges();
-
                     }
-                    var ListOfPersons = from l in context.persons
-                                    where l.Age <= 20
-                                    select new
-                                    {
-                                        personName = l.Firstname,
-                                        PersonAge = l.Age
-                                    };
+
+                var foundPeople = peopleList.Where(x => x.Age >= 20);
+
+                foreach (var i in foundPeople)
+                    listBox1.Items.Add($"first name:{i.Firstname} Age: {i.Age}");
+                //string foundPeople = peopleList.Find(x => x == persons).Firstname( Select persons).Age >= 20);
 
 
-                foreach (var i in ListOfPersons)
-                {
-                    listBox1.Items.Add(i.ToString());
-                }
+
+                //var ListOfPersons = from l in context.persons
+                //                where l.Age >= 20
+                //                select new
+                //                {
+                //                    personName = l.Firstname,
+                //                    PersonAge = l.Age
+                //                };
+               
+
+
+                //foreach (var i in ListOfPersons)
+                //{
+                //    listBox1.Items.Add(i);
+                //}
             }
         }
         public void AddPeople()
@@ -57,6 +59,8 @@ namespace övning_11_Db
                 peopleList.Add(new Person("Sven", 45));
                 peopleList.Add(new Person("Karin", 23));
                 peopleList.Add(new Person("Molly", 12));
+                peopleList.Add(new Person("Berit", 35));
+                peopleList.Add(new Person("Tilde", 2));
             }
         }
     }
