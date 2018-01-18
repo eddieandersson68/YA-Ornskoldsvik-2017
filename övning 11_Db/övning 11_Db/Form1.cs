@@ -27,7 +27,9 @@ namespace övning_11_Db
                         context.SaveChanges();
                     }
 
-                var foundPeople = peopleList.Where(x => x.Age >= 20);
+                //var foundPeople = peopleList.Where(x => x.Age >= 20);
+                var foundPeople = peopleList.Find(x => x.Firstname) Select (peopleList.Where (x => x.Age > 20  )));
+
 
                 foreach (var i in foundPeople)
                     listBox1.Items.Add($"first name:{i.Firstname} Age: {i.Age}");
