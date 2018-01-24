@@ -286,3 +286,6 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+/GOL_V01.zip
+/GOL_V02.zip
+/GOL_V04.zip

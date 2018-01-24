@@ -39,7 +39,7 @@ namespace EntityFramework01
             Employee updateEmployee;
             using (var DBStaffContext = new StaffContext())
             {
-                updateEmployee = DBStaffContext.Employee.Where(x => x.Person_ID == lstBxStaff.SelectedIndex).First<Employee>();
+                updateEmployee = DBStaffContext.Employee.Where(x => x.Person_ID == lstBxStaff.SelectedIndex).First();
 
                 if (updateEmployee != null)
                 {
@@ -93,6 +93,7 @@ namespace EntityFramework01
                 dbContext.Employee.Add(newEmployee);
                 dbContext.SaveChanges();
             }
+
             lstBxStaff.Items.Clear();
             PopulateListBxStaff();
 
@@ -128,19 +129,30 @@ namespace EntityFramework01
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Employee employeeToDelete;
+            if (lstBxStaff.SelectedItem == null)
+                return;
+
+            var employeeIdToDelete = ((Employee)lstBxStaff.SelectedItem).Person_ID;
+
+            
             using (var DBStaffRemoveContex = new StaffContext())
             {
-
-                employeeToDelete = DBStaffRemoveContex.Employee.Where(s => s.Person_ID == lstBxStaff.SelectedIndex + 1).FirstOrDefault<Employee>();
+                var employeeToDelete = DBStaffRemoveContex.Employee.Where(s => s.Person_ID == employeeIdToDelete).First();
                 DBStaffRemoveContex.Employee.Remove(employeeToDelete);
                 DBStaffRemoveContex.SaveChanges();
-
-
             }
+        }
 
 
+        private void lsBxStaff_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstBxStaff.SelectedItem == null)
+                return;
 
+            var currenEmployee = (Employee)lstBxStaff.SelectedItem;
+            txBxFirstName.Text = currenEmployee.FirstName;
+            txBxLastName.Text = currenEmployee.LastName;
+            labelId.Text = currenEmployee.Person_ID.ToString();
         }
 
         private class DBStaffContex

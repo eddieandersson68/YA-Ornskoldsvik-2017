@@ -39,6 +39,7 @@
             this.btnUpdateDBStaff = new System.Windows.Forms.Button();
             this.txBxFirstName = new System.Windows.Forms.TextBox();
             this.txBxLastName = new System.Windows.Forms.TextBox();
+            this.labelId = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lstBxStaff
@@ -48,6 +49,7 @@
             this.lstBxStaff.Name = "lstBxStaff";
             this.lstBxStaff.Size = new System.Drawing.Size(352, 212);
             this.lstBxStaff.TabIndex = 0;
+            this.lstBxStaff.SelectedIndexChanged += new System.EventHandler(this.lsBxStaff_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -136,11 +138,21 @@
             this.txBxLastName.Size = new System.Drawing.Size(100, 20);
             this.txBxLastName.TabIndex = 10;
             // 
+            // labelId
+            // 
+            this.labelId.AutoSize = true;
+            this.labelId.Location = new System.Drawing.Point(157, 292);
+            this.labelId.Name = "labelId";
+            this.labelId.Size = new System.Drawing.Size(18, 13);
+            this.labelId.TabIndex = 11;
+            this.labelId.Text = "ID";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(511, 490);
+            this.Controls.Add(this.labelId);
             this.Controls.Add(this.txBxLastName);
             this.Controls.Add(this.txBxFirstName);
             this.Controls.Add(this.btnUpdateDBStaff);
@@ -172,6 +184,7 @@
         private System.Windows.Forms.Button btnUpdateDBStaff;
         private System.Windows.Forms.TextBox txBxFirstName;
         private System.Windows.Forms.TextBox txBxLastName;
+        private System.Windows.Forms.Label labelId;
     }
 }
 

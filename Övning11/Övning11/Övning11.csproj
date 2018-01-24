@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DAD36787-5D82-4C2B-BCAD-FF3686FB2FFD}</ProjectGuid>
+    <ProjectGuid>{9FD7CACF-E2D2-4DF9-B1AD-82AD85674559}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>EntityFramework01</RootNamespace>
-    <AssemblyName>EntityFramework01</AssemblyName>
+    <RootNamespace>Övning11</RootNamespace>
+    <AssemblyName>Övning11</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -54,7 +54,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Employee.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,11 +61,10 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="PersonsDb.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StaffContext.cs" />
-    <Compile Include="TimeReport.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

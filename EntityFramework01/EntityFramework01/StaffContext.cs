@@ -10,6 +10,7 @@ namespace EntityFramework01
         public StaffContext()
             : base("name=StaffContext")
         {
+            
         }
 
         public virtual DbSet<Employee> Employee { get; set; }
