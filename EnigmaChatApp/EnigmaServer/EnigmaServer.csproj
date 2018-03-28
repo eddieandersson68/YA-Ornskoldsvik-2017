@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CD1158E3-C98D-4AD3-B860-99C7B1C86EA2}</ProjectGuid>
+    <ProjectGuid>{F69A2840-62B0-4FF7-AB90-EEFDD199C330}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Overloading</RootNamespace>
-    <AssemblyName>Overloading</AssemblyName>
+    <RootNamespace>EnigmaServer</RootNamespace>
+    <AssemblyName>EnigmaServer</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,8 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account.cs" />
-    <Compile Include="MainMenu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,0 +1,333 @@
+﻿<Window x:Class="Exersice4.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:local="clr-namespace:Exersice4.WPF"
+        mc:Ignorable="d"
+        Title="Painter" Height="800" Width="1040" BorderBrush="Black" BorderThickness="5" SizeToContent="WidthAndHeight">
+    <!--MouseUp="Window_MouseUp">-->
+
+    <!--<DockPanel>
+        <ToolBar Name= "MyToolbar" DockPanel.Dock="Top" Height="50">
+            <RadioButton Name="LineButton" BorderBrush="#FF969696" Content="Line" Height="50" Width="80" GroupName="ShapeGroup" Click="LineButton_OnClick"/>
+            <RadioButton Name="EllipseButton" BorderBrush="#FF969696" Content="Ellipse" Height="50" Width="80" GroupName="ShapeGroup" Click="EllipseButton_OnClick"/>
+            <RadioButton Name= "RectangleButton" BorderBrush="#FF969696" Content="Rectangle" Height="50" Width="80" GroupName="ShapeGroup" Click="RectangleButton_OnClick"/>
+        </ToolBar>-->
+         
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+           
+            <StackPanel x:Name ="StackPanelStroke" Orientation="Horizontal" Style="{StaticResource StackPanelDesign}"
+                        Width="280" Height="80"                             
+                        HorizontalAlignment="Left">                            
+        
+                <TextBlock Text="Stroke" VerticalAlignment="Center" Margin="5,-35,0,0"/>
+           
+                <Rectangle x:Name = "RectRedStroke" Fill ="Red" VerticalAlignment="Bottom" Margin="-30,0,0,5" Style="{StaticResource NormalRectShape}" MouseDown="RectRedStroke_OnMouseDown">
+                    <Rectangle.Triggers>
+                        <EventTrigger RoutedEvent="Rectangle.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation From="0" To ="30" Duration="0:0:.5"
+                                    Storyboard.TargetProperty="(Rectangle.Width)"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Rectangle.Triggers>
+                </Rectangle>
+
+                <Rectangle x:Name = "RectGreenStroke" Fill ="Green" VerticalAlignment="Bottom" Margin="10,0,0,5" Style="{StaticResource NormalRectShape}" MouseDown="RectGreenStroke_OnMouseDown">
+                    <Rectangle.Triggers>
+                        <EventTrigger RoutedEvent="Rectangle.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation From="0" To ="30" Duration="0:0:.5"
+                                                 Storyboard.TargetProperty="(Rectangle.Width)"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Rectangle.Triggers>
+                </Rectangle>
+
+                <Rectangle x:Name = "RectBlueStroke" Fill ="Blue" VerticalAlignment="Bottom" Margin="10,0,0,5" Style="{StaticResource NormalRectShape}" MouseDown="RectBlueStroke_OnMouseDown">
+                    <Rectangle.Triggers>
+                        <EventTrigger RoutedEvent="Rectangle.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation From="0" To ="30" Duration="0:0:.5"
+                                                     Storyboard.TargetProperty="(Rectangle.Width)"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Rectangle.Triggers>
+                </Rectangle>
+
+                <TextBlock Text ="Sel Stroke" VerticalAlignment="Center" Margin="5,-35,0,0"/>
+                
+                <Rectangle x:Name = "SelectedStroke"  VerticalAlignment="Bottom" Margin="-55,0,0,5" Style="{StaticResource NormalRectShape}"/>
+                <TextBlock Text ="User Stroke" VerticalAlignment="Center" Margin="15,-35,0,0"/>
+                <Rectangle x:Name = "UserStroke" VerticalAlignment="Bottom" Margin="-65,0,0,5" Style="{StaticResource NormalRectShape}" MouseDown="UserStroke_OnMouseDown"/>              
+            </StackPanel>           
+        <StackPanel  x:Name="StackPanelFillColours" Orientation="Horizontal" Style="{StaticResource StackPanelDesign}"
+                     Width="280" Height="80"
+                     HorizontalAlignment="Left"                      
+                     Grid.Row="1">
+               
+                <TextBlock Text="Fill" VerticalAlignment="Center" Margin="15,-50,0,0"/>
+
+                <Rectangle x:Name = "RectRedFill" Fill ="Red" VerticalAlignment="Center" Margin="-20,20,0,5" Style="{StaticResource NormalRectShape}" MouseDown="RectRedFill_OnMouseDown">
+                    <Rectangle.Triggers>
+                        <EventTrigger RoutedEvent="Rectangle.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation From="0" To ="30" Duration="0:0:.5"
+                                    Storyboard.TargetProperty="(Rectangle.Width)"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Rectangle.Triggers>
+                </Rectangle>
+
+                <Rectangle x:Name = "RectGreenFill" Fill ="Green" VerticalAlignment="Center" Margin="10,20,0,5" Style="{StaticResource NormalRectShape}" MouseDown="RectGreenFill_OnMouseDown">
+                    <Rectangle.Triggers>
+                        <EventTrigger RoutedEvent="Rectangle.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation From="0" To ="30" Duration="0:0:.5"
+                                                 Storyboard.TargetProperty="(Rectangle.Width)"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Rectangle.Triggers>
+                </Rectangle>
+
+                <Rectangle x:Name = "RectBlueFill" Fill ="Blue" VerticalAlignment="Center" Margin="10,20,0,5"  Style="{StaticResource NormalRectShape}" MouseDown="RectBlueFill_OnMouseDown">
+                    <Rectangle.Triggers>
+                        <EventTrigger RoutedEvent="Rectangle.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation From="0" To ="30" Duration="0:0:.5"
+                                                     Storyboard.TargetProperty="(Rectangle.Width)"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Rectangle.Triggers>
+                </Rectangle>
+
+                <TextBlock Text ="Sel Fill" VerticalAlignment="Top" Margin="15,10,0,0" />
+
+                <Rectangle x:Name = "SelectedFill" VerticalAlignment="Center" Margin="-40,20,0,5" Style="{StaticResource NormalRectShape}"/>
+            
+            <TextBlock Text ="user Fill" VerticalAlignment="Top" Margin="32,10,0,0" />
+            <Rectangle x:Name = "UserFill" VerticalAlignment="Center" Margin="-40,20,0,5" Style="{StaticResource NormalRectShape}" MouseDown="UserFill_OnMouseDown"/>
+
+            </StackPanel> 
+
+                <StackPanel x:Name ="MyToolbars"  Orientation="Horizontal" Style="{StaticResource StackPanelDesign}"
+                                            
+                    Height="220" 
+                     Width="Auto"                           
+                    Grid.Column="1"
+                    Grid.RowSpan="2"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Stretch" >
+
+                <Button x:Name = "BtnEllipse" 
+                Content = "Ellipse" 
+                Margin="5,7,2,0"
+                Width ="70"              
+                VerticalAlignment="Top"
+                HorizontalAlignment="Right"
+                Click="BtnEllipse_OnClick"/>
+
+                <Button x:Name = "BtnRect" 
+                        Content = "Rectangle" 
+                        Margin="5,7,2,0" 
+                        Width ="70"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                 Click="BtnRect_OnClick"/>
+
+                <Button x:Name = "BtnLine" 
+                        Content = "Line" 
+                        Margin="5,7,2,0" 
+                        Width ="70"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                Click="BtnLine_OnClick" />
+
+                <Button x:Name = "BtnDraw" 
+                        Content = "Draw" 
+                        Margin="5,7,2,0" 
+                        Width ="70"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                 Click="BtnDraw_OnClick"/>
+
+                <Button x:Name = "BtnResetMixedFillColour" 
+                    Content = "Rst MixedFill" 
+                        FontSize="10"
+                        Foreground="Red"
+                        Background="White"
+                    Margin="5,20,2,0" 
+                    Width ="70"
+                        Height="20"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Left"
+                Click="BtnResetMixedFillColour_OnClick"/>
+
+                <Button x:Name = "BtnResetMixedStrokeColour" 
+                    Content = "Rst MixedStroke" 
+                        FontSize="10"
+                        Background="White"
+                        Foreground="Red"
+                        Margin="5,20,2,0" 
+                        Width ="75"
+                        Height="20"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                 Click="BtnResetMixedStrokeColour_OnClick"/>
+
+                <Button x:Name = "BtnClear" 
+                Content = "Clear Form" 
+                        Foreground="Black"
+                        FontSize="20"
+                        FontWeight="Bold"
+                        Background="Red"
+                        Margin="80,7,0,0" 
+                        Width ="120"
+                        Height="30"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                Click="BtnClear_OnClick"/>       
+                    
+            <StackPanel x:Name="ColourValues_StrokeThickness"  Orientation="Vertical"  VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="-5,-20,0,0" Height="100">
+                    <TextBox Text="{Binding ElementName=RedSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" 
+                             Width="40" Height="20"                             
+                             HorizontalAlignment="Left" Margin="30,-5,0,0"/>
+
+                    <TextBox Text="{Binding ElementName=GreenSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" 
+                             Width="40" Height="20" 
+                             VerticalAlignment="Top" HorizontalAlignment="Right" Margin="30,3,0,0"/>
+                    
+                    <TextBox Text="{Binding ElementName=BlueSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" 
+                             Width="40" Height="20" 
+                             VerticalAlignment="Top" HorizontalAlignment="Right" Margin="30,5,0,0"/>
+                
+                    <TextBox Text="{Binding ElementName=BrushSize, Path=Value, UpdateSourceTrigger=PropertyChanged}" 
+                          Width="40" Height="20" 
+                           VerticalAlignment="Center" HorizontalAlignment="Right" Margin="30,17,0,0"/>
+
+                </StackPanel>                
+
+            </StackPanel> 
+              <StackPanel x:Name="MixedColourSwatches"  Orientation="Vertical" 
+                          VerticalAlignment="Center" HorizontalAlignment="Left"
+                          Height="160"
+                       Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
+
+              <TextBlock Text ="Mixed Stroke" 
+                       Margin="10,27,0,0"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+              <Rectangle x:Name = "MixedStrokeColourSwatch" HorizontalAlignment="Left"
+                       Style="{StaticResource NormalRectShape}"
+                       Fill ="Black"
+                       Margin="30,0,0,0"
+                      
+                      MouseDown="MixedStrokeColourSwatch_OnMouseDown"/>
+
+              <TextBlock Text ="Mixed Fill" 
+                       Margin="20,30,0,0"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"/>
+            
+              <Rectangle x:Name = "MixedFillColourSwatch" HorizontalAlignment="Left"
+                       Style="{StaticResource NormalRectShape}"
+                       Fill ="Black"
+                       Margin="30,0,0,0"
+                     
+                       MouseDown="MixedFillColourSwatch_OnMouseDown"/>           
+              </StackPanel>
+                        
+            <StackPanel x:Name="MixedColourCheckBoxes"  Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Left" Width="725"
+                        Grid.Row="1" Grid.Column="1" Grid.RowSpan="2">
+
+                <TextBlock HorizontalAlignment="Left" Margin="94,-36,8,0">MixedColour  </TextBlock>
+                <CheckBox x:Name="MixedStrokeColour" VerticalAlignment="Top" HorizontalAlignment="Left" 
+                          Margin="100,-15,2,0" Content="Stroke" 
+                          Checked="MixedStrokeColour_OnChecked" Unchecked="MixedStrokeColour_OnUnchecked" ></CheckBox>
+                
+                <TextBlock HorizontalAlignment="Left" Margin="94,15,0,0">MixedColour  </TextBlock>
+                <CheckBox x:Name="MixedFillColour" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                          Margin="100,3,2,0" Content="Fill" 
+                          Checked="MixedFillColour_OnChecked"  
+                          Unchecked="MixedFillColour_OnUnchecked"  MouseDown="MixedFillColour_OnUnchecked"></CheckBox>
+                    
+
+            </StackPanel>
+            
+            <StackPanel x:Name="Sliders"  Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Left" Width="725"
+                        Grid.Row="1" Grid.Column="1" Grid.RowSpan="2">
+              
+            <Slider x:Name ="RedSlider" Style="{StaticResource SliderStyle}"
+                    Background="Red"
+                    Margin="130,-35,0,0"                 
+                    ValueChanged="RedSlider_OnValueChanged">
+            </Slider>
+           
+            
+                <Slider x:Name ="GreenSlider" Style="{StaticResource SliderStyle}"
+                    Background="Green"
+                    VerticalAlignment="top"                  
+                    Margin="140,-10,10,0"                
+                    ValueChanged="GreenSlider_OnValueChanged">
+                </Slider>
+            
+                
+            <Slider x:Name ="BlueSlider" Style="{StaticResource SliderStyle}"
+                    Background="Blue"
+                    Margin="140,4,10,0"                 
+                    ValueChanged="BlueSlider_OnValueChanged">
+            </Slider>
+            
+                
+            
+            </StackPanel>
+                <Slider x:Name ="BrushSize" Style="{StaticResource SliderStyle}"
+                        HorizontalAlignment="Center"
+                        Grid.Row="2" Grid.Column="1"
+                     Background="LightGray"
+                     Foreground="Black"
+                        
+                     BorderThickness="1"
+                     BorderBrush="DarkGray"
+                     Height="25"                     
+                     Margin="130,-30,10,0" 
+                     Minimum="1" 
+                     Maximum="30"                     
+                     Value="4"
+                ValueChanged="BrushSize_OnValueChanged">
+                    
+            </Slider>
+            
+                <TextBlock Text ="Set brush size" Grid.Row="1" Grid.Column="1" IsHitTestVisible="False"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                      Margin="120,50,0,0"/>
+
+            <Canvas  x:Name ="MyCanvas" Height="580" Width="1020" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"  Background="White" 
+                     MouseDown="MyCanvas_OnMouseDown" MouseUp="MyCanvas_OnMouseUp"  MouseMove="MyCanvas_OnMouseMove" />     
+        </Grid>  
+</Window>
