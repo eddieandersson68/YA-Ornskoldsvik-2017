@@ -1,0 +1,9 @@
+﻿<Application x:Class="EnigmaClient.Views.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:EnigmaClient.Views"
+             StartupUri="Views/UserGuiView.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
